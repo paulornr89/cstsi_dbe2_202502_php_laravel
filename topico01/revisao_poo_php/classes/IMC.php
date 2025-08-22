@@ -9,7 +9,7 @@ class IMC{
 
     public static function calc(Pessoa $objPessoa){
         //echo "Calculando o IMC de $objPessoa->nome\n";        
-        return $objPessoa->peso / $objPessoa->altura ** 2;
+        return number_format($objPessoa->peso / $objPessoa->altura ** 2, 2, ',','.');
     }
 
     public static function classifica(Pessoa $objPessoa){
