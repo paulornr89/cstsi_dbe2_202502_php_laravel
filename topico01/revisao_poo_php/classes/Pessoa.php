@@ -3,7 +3,7 @@
 class Pessoa
 {
 	public $nome, $idade, $altura, $peso;
-	protected $imc;
+	protected $imc, $saude;
 
 	function __construct(
 		$nome,
@@ -22,26 +22,19 @@ class Pessoa
 		echo "\n$this->nome foi destruido!";
 	}
 
-	function calcImc()
-	{
-		if (
-			!is_numeric($this->altura)
-			&& !is_numeric($this->peso)
-		) {
-			echo "\nIMC $this->nome: Erro, informe peso e altura corretamente.\n";
-            return;
-        }
-
-        $this->imc = $this->peso / $this->altura ** 2;
-		echo "\nO IMC do $this->nome é: " . number_format($this->imc, 2) . "\n";
-		
-	}
-
     function setImc($valor){
         $this->imc = $valor;
+    }
+
+    function setSaude($string){
+        $this->saude = $string;
     }
 
     function getImc(){
         return $this->imc;
     }
+
+	function getSaude(){
+		return $this->saude;
+	}
 }
